@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include SharedHelper
   include PreferencesHelper
   
-  before_filter :create_page_view, :require_activation, :tracker_vars,
+  before_filter :create_page_view, :require_activation, #:tracker_vars,
                 :admin_warning
 
   # See ActionController::RequestForgeryProtection for details

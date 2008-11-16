@@ -76,7 +76,15 @@ Rails::Initializer.run do |config|
   config.gem 'chronic'
 end
 
-require 'vendor/plugins/jquery_ui_rails_helpers/helpers/tabs_renderer'
+#require 'vendor/plugins/jquery_ui_rails_helpers/helpers/tabs_renderer'
+require 'oauth'
+require 'oauth/consumer'
+require 'oauth/client/net_http'
+require 'oauth_monkey_patches'
+
+YahooBase.establish_connection({
+  :adapter => "yahoo"
+})
 
 # Set INLINEDIR to override default location for ruby_inline directory
 # The home directory may not be correctly set in an "su"/"sudo" situation
